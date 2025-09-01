@@ -3,30 +3,11 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Shield, Database, Zap, Users, ArrowRight, Play } from "lucide-react"
 import Link from "next/link"
+import { PageLayout } from "@/components/layout/page-layout"
 
 export default function DemoPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted/20">
-      {/* Header */}
-      <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
-              <Shield className="h-8 w-8 text-primary" />
-              <h1 className="text-2xl font-bold">URA Protocol</h1>
-            </Link>
-            <div className="flex items-center gap-4">
-              <Link href="/">
-                <Button variant="ghost">Home</Button>
-              </Link>
-              <Link href="/dashboard">
-                <Button>Documentation</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
-
+    <PageLayout>
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center max-w-4xl mx-auto">
@@ -221,6 +202,6 @@ export default function DemoPage() {
           </CardContent>
         </Card>
       </section>
-    </div>
+    </PageLayout>
   )
 }

@@ -5,36 +5,11 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Shield, Zap, Database, Users, CheckCircle, Play } from "lucide-react"
 import Link from "next/link"
+import { PageLayout } from "@/components/layout/page-layout"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted/20">
-      {/* Header */}
-      <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Shield className="h-8 w-8 text-primary" />
-              <h1 className="text-2xl font-bold">URA Protocol</h1>
-            </div>
-            <div className="flex items-center gap-4">
-              <Link href="/dashboard">
-                <Button variant="ghost">Documentation</Button>
-              </Link>
-              <Link href="/demo">
-                <Button variant="outline" className="gap-2 bg-transparent">
-                  <Play className="h-4 w-4" />
-                  Try Demo
-                </Button>
-              </Link>
-              <Link href="/dashboard">
-                <Button>Launch App</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
-
+    <PageLayout>
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center max-w-4xl mx-auto">
@@ -254,19 +229,6 @@ export default function HomePage() {
           </CardContent>
         </Card>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t bg-muted/30">
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Shield className="h-6 w-6 text-primary" />
-              <span className="font-semibold">URA Protocol</span>
-            </div>
-            <p className="text-sm text-muted-foreground">Universal Rule Attestation for Web3</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </PageLayout>
   )
 }
